@@ -22,3 +22,5 @@ Apply to bash shell:
     curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/bashrc >> ~/.bashrc
 	curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/tmux.conf > ~/.tmux.conf
 	source ~/.bashrc
+
+	curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/setup.sh >> ~/setup.sh
