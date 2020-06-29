@@ -19,8 +19,9 @@ Generate download link using few quick substitutions:
 
 Apply to bash shell:
 
-    curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/bashrc >> ~/.bashrc
-	curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/tmux.conf > ~/.tmux.conf
-	source ~/.bashrc
+    curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/bashrc >> ~/.bashrc 2> /dev/null
+    curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/tmux.conf > ~/.tmux.conf 2> /dev/null
+    curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/vimrc >> ~/.vimrc 2> /dev/null
+    source ~/.bashrc
 
-	curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/setup.sh >> ~/setup.sh
+    curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/setup.sh >> ~/setup.sh
