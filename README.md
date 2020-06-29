@@ -23,5 +23,3 @@ Apply to bash shell:
     curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/tmux.conf > ~/.tmux.conf 2> /dev/null
     curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/vimrc >> ~/.vimrc 2> /dev/null
     source ~/.bashrc
-
-    curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/setup.sh >> ~/setup.sh
