@@ -3,7 +3,7 @@ source <(kubectl completion bash); alias k=kubectl ; complete -F __start_kubectl
 env_list() { k set env pod --list }
 
 savex() {
-	funcName=savex
+	funcName="savex"
 	if [[ $# == 0 ]] ; then
 		printf "syntax:\n\t${yellow} ${funcName} k8s-object${reset}\n"
 		printf "example:\n\t${yellow} ${funcName} svc${reset}"
