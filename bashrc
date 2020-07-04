@@ -3,16 +3,20 @@ source <(kubectl completion bash); alias k=kubectl ; complete -F __start_kubectl
 env_list() { k set env pod --list }
 
 savex() {
+	funcName=savex
 	if [[ $# == 0 ]] ; then
-		printf "syntax:\n\t${yellow} $0 k8s-object${reset}\n"
-		printf "example:\n\t${yellow} $0 svc${reset}"
-		printf "\n\t${yellow} $0 po${reset}\n"
+		printf "syntax:\n\t${yellow} ${funcName} k8s-object${reset}\n"
+		printf "example:\n\t${yellow} ${funcName} svc${reset}"
+		printf "\n\t${yellow} ${funcName} po${reset}\n"
 		return 1
 	fi
 
 	for obj in $(k get $1 --no-headers | awk '{print $1}') ; do
-		printf "Saving ${obj} => ${1}_${obj}.yaml\n"
-		k get ${1}/${obj} $y > ${1}_${obj}.yaml
+		printf "Saving ${obj} => ${1}_${obj}.yaml "
+		sleep 1
+		$(k get ${1}/${obj} $y > ${1}_${obj}.yaml)
+		printf " and ${1}_${obj}-cleaned.yaml\n"
+		cat ${1}_${obj}.yaml | yq delete - metadata.managedFields | yq delete - spec.tolerations | yq delete - status > ${1}_${obj}-cleaned.yaml
 	done
 }
 
