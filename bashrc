@@ -32,7 +32,6 @@ alias rollhist='k ${context} ${namespace} rollout history deploy '
 alias descx='k ${context} ${namespace} describe '
 alias delx='k ${context} ${namespace} delete $now'
 alias watchx='watch "k get -owide"'
-sevex() { for obj in `k get po,svc,ing` ; do k get $obj $y > $obj.yaml ; done }
 
 alias events='kubectl ${context} ${namespace} get events --sort-by=".metadata.creationTimestamp" --field-selector=involvedObject.name="$1" '
 # alias events='kubectl ${context} ${namespace} get events --field-selector involvedObject.name=$1 '
@@ -42,23 +41,3 @@ alias gety='k ${context} ${namespace} get $y'
 alias getj='k ${context} ${namespace} get $j'
 alias logs='k ${context} ${namespace} logs --all-containers'
 alias gc='k config get-contexts ; printf "${yellow}current selection: ${bold}$context $namespace ${reset}\n"'
-
-alias env-list='k ${context} ${namespace} set env pod --list'
-
-# functions
-set-kube-options() {
-	read "context?Enter context: "
-	read "namespace?Enter namespace: "
-	namespace="--namespace=$namespace"
-	context="--context=$context"
-	printf "${yellow}kube-options are set to --namespace=$namespace --context=$context${reset}\n"
-}
-unset-kube-options() {
-	unset namespace
-	unset context
-	printf "${yellow}kube-options were unset. now namepace=#$namespace# context=#$context#${reset}\n"
-}
-
-makeFunction() {
-	echo $@	
-}
