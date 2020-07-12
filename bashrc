@@ -22,3 +22,5 @@ alias gety='k  get $y'
 alias getj='k  get $j'
 alias logs='k  logs --all-containers'
 alias gc='k config get-contexts ; printf "${yellow}current selection: ${bold}$context $namespace ${reset}\n"'
+
+alias cmd_tmux="echo tmux new-session -d -s htop-session 'htop'; tmux split-window; tmux send 'htop -t' ENTER; tmux a"
