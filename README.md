@@ -25,4 +25,6 @@ Apply to bash shell:
     curl -k https://raw.githubusercontent.com/robertranjan/dotfiles/master/vimrc >> ~/.vimrc 2> /dev/null
     source ~/.bashrc
 
-set tmux copy mode to vi: Prefix :setw -g mode-keys vi
+set tmux copy mode to vi: 
+
+    send prefix :setw -g mode-keys vi
