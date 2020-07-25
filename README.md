@@ -28,3 +28,24 @@ Apply to bash shell:
 set tmux copy mode to vi: 
 
     send prefix :setw -g mode-keys vi
+    send prefix :set-window-option -g mode-keys vi
+
+more tmux setup/view options:
+
+		:show-option -wg 	; show current options
+
+		:set-option -g prefix C-a		; set C-a prefix
+		:unbind-key C-b
+		:bind-key a send-prefix
+
+
+		:set-option -g display-time 4000 	; notification display time to 4000ms
+		:show-messages 										; show all recent messages in a screen
+
+Resize tmux panes:
+
+    # Resize the current pane using Alt + direction
+    bind -n M-k resize-pane -U 5
+    bind -n M-j resize-pane -D 5
+    bind -n M-h resize-pane -L 5
+    bind -n M-l resize-pane -R 5
